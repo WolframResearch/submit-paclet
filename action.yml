@@ -1,0 +1,21 @@
+name: 'Submit Paclet'
+description: 'Submit a paclet using its definition notebook file'
+branding:
+  icon: 'upload-cloud'  
+  color: 'orange'
+inputs:
+  definition_notebook:
+    description: 'Path to the definition notebook'
+    required: false
+    default: './ResourceDefinition.nb'
+  paclet_cicd_version:
+    description: 'Version of PacletCICD to use'
+    required: false
+    default: 'latest'
+  resource_system_base:
+    description: 'Specifies the location of the resource system'
+    required: false
+    default: 'https://www.wolframcloud.com/obj/resourcesystem/api/1.0'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
